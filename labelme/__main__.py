@@ -9,6 +9,9 @@ import yaml
 from qtpy import QtCore
 from qtpy import QtWidgets
 
+envpath =sys.path[0]+"/.."
+print(f"evnpath={envpath}")
+sys.path.append(envpath)
 from labelme import __appname__
 from labelme import __version__
 from labelme.app import MainWindow

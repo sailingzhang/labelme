@@ -33,6 +33,8 @@ from labelme.widgets import ToolBar
 from labelme.widgets import UniqueLabelQListWidget
 from labelme.widgets import ZoomWidget
 
+from otherpro import preproloadFile
+
 # FIXME
 # - [medium] Set max zoom value to something big enough for FitWidth/Window
 
@@ -1484,6 +1486,7 @@ class MainWindow(QtWidgets.QMainWindow):
         if self.output_dir:
             label_file_without_path = osp.basename(label_file)
             label_file = osp.join(self.output_dir, label_file_without_path)
+        preproloadFile(filename,label_file)
         if QtCore.QFile.exists(label_file) and LabelFile.is_label_file(
             label_file
         ):
